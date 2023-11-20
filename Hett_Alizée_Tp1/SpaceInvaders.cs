@@ -70,10 +70,10 @@ namespace Hett_Alizée_Tp1
 
                 }   
             }
-            //foreach (var enemy in _enemies.OfType<IAbility>().ToList())
-            //{
-            //    enemy.UseAbility(_allPlayers);
-            //}
+            foreach (var enemy in _enemies.OfType<IAbility>().ToList())
+            {
+                enemy.UseAbility(_allPlayers);
+            }
 
             foreach (var player in _allPlayers)
             {
@@ -98,7 +98,7 @@ namespace Hett_Alizée_Tp1
             Console.WriteLine();
 
 
-            while (!game._player.DefaultSpaceship.IsDestroyed || (game._enemies.Any(e => !e.IsDestroyed)))
+            while (!game._player.DefaultSpaceship.IsDestroyed && (game._enemies.Any(e => !e.IsDestroyed)))
             {
                 game.PlayRound();
             }
