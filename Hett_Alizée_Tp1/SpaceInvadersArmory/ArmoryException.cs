@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hett_Alizée_Tp1
+namespace Hett_Alizée_Tp1.SpaceInvadersArmory
 {
     internal class ArmoryException : Exception
     {

@@ -1,26 +1,27 @@
-﻿using System;
+﻿using Hett_Alizée_Tp1.Models.SpaceShips;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hett_Alizée_Tp1
+namespace Hett_Alizée_Tp1.Models
 {
-    internal class Player
+    internal class Player : IPlayer
     {
         private string FirstName { get; set; }
         private string LastName { get; set; }
         public string Alias { get; set; }
-        public Spaceship? DefaultSpaceship { get; set; }
-
-        public Player(string firstName, string lastName, string alias)
+        public Spaceship DefaultSpaceship { get; set; }
+        public Player(string firstName, string lastName, string alias, Spaceship defaultSpaceship)
         {
             FirstName = FormatName(firstName);
             LastName = FormatName(lastName);
             Alias = alias;
+            DefaultSpaceship = defaultSpaceship; 
         }
 
-        private static string FormatName(string name)
+            private static string FormatName(string name)
         {
             if (string.IsNullOrEmpty(name)) return string.Empty;
             return $"{name.Substring(0, 1).ToUpper()}{name.Substring(1).ToLower()}";
